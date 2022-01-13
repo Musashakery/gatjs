@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap-rtl.css" />
+  <script src="Scripts/jquery-1.10.2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+  <style>
+    .display-box {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #dcdbe1;
+      border: solid black 0.5px;
+      color: black;
+      border-radius: 5px;
+      width: 100%;
+      height: 65%;
+    }
+
+    .button {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #cad4b9;
+      color: white;
+      border: solid black 0.5px;
+      width: 100%;
+      border-radius: 5px;
+      height: 70%;
+      outline: none;
+    }
+
+    .button:active {
+      background: #e5e5e5;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center">
+    <table class="table-hover">
+      <tr>
+        <td colspan="3"> <input class="display-box" type="text" id="result" /> </td>
+        <!-- clearScreen() function clear all the values -->
+        <td> <input class="button" type="button" value="C" onclick="clearScreen()" style="background-color: #fb0066;" />
+        </td>
+      </tr>
+      <tr>
+        <!-- display() function display the value of clicked button -->
+        <td> <input class="button" type="button" value="1" onclick="h1('1')" /> </td>
+        <td> <input class="button" type="button" value="2" onclick="h1('2')" /> </td>
+        <td> <input class="button" type="button" value="3" onclick="h1('3')" /> </td>
+        <td> <input class="button" type="button" value="/" onclick="h1('/')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="4" onclick="h1('4')" /> </td>
+        <td> <input class="button" type="button" value="5" onclick="h1('5')" /> </td>
+        <td> <input class="button" type="button" value="6" onclick="h1('6')" /> </td>
+        <td> <input class="button" type="button" value="-" onclick="h1('-')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="7" onclick="h1('7')" /> </td>
+        <td> <input class="button" type="button" value="8" onclick="h1('8')" /> </td>
+        <td> <input class="button" type="button" value="9" onclick="h1('9')" /> </td>
+        <td> <input class="button" type="button" value="+" onclick="h1('+')" /> </td>
+      </tr>
+      <tr>
+        <td> <input class="button" type="button" value="." onclick="h1('.')" /> </td>
+        <td> <input class="button" type="button" value="0" onclick="h1('0')" /> </td>
+        <!-- calculate() function evaluate the mathematical expression -->
+        <td> <input class="button" type="button" value="=" onclick="calculate()" style="background-color: #fb0066;" />
+        </td>
+        <td> <input class="button" type="button" value="*" onclick="h1('*')" /> </td>
+      </tr>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+  <script>
+    // This function clear all the values
+    function clearScreen() {
+      document.getElementById("result").value = "";
+    }
+    // This function display values
+    function h1(value) {
+      document.getElementById("result").value += value;
+    }
+    // This function evaluates the expression and return result
+   
+    
+    function calculate() {
+      
+      var p = document.getElementById("result").value;
+      var x="empety";
+      if(p==""){
+      x +=p.value;
+      }
+      var q = eval(p);
+      document.getElementById("result").value = q;
+     }
+  </script>
+</body>
+
+</html>
